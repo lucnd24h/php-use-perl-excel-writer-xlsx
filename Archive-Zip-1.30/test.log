@@ -1,0 +1,83 @@
+zipinfo output:
+$ZIP = bless( {
+  "eocdOffset" => 0,
+  "fileName" => "",
+  "writeEOCDOffset" => 0,
+  "diskNumberWithStartOfCentralDirectory" => 0,
+  "writeCentralDirectoryOffset" => 0,
+  "centralDirectorySize" => 65,
+  "members" => [],
+  "numberOfCentralDirectoriesOnThisDisk" => 1,
+  "zipfileComment" => "",
+  "numberOfCentralDirectories" => 1,
+  "diskNumber" => 0,
+  "centralDirectoryOffsetWRTStartingDiskNumber" => 349
+}, 'Archive::Zip::Archive' );
+
+Found EOCD at 414 (0x19e)
+
+Found central directory for member #1 at 349
+$CDMEMBER1 = bless( {
+  "externalFileName" => "(testin.zip)",
+  "uncompressedSize" => 300,
+  "fileName" => "testdir/testing.txt",
+  "versionNeededToExtract" => 20,
+  "fileAttributeFormat" => 3,
+  "diskNumberStart" => 0,
+  "compressionMethod" => 0,
+  "eocdCrc32" => "2889301810",
+  "fileComment" => "",
+  "externalFileAttributes" => "2176188416",
+  "internalFileAttributes" => 0,
+  "bitFlag" => 0,
+  "lastModFileDateTime" => "1111319403",
+  "crc32" => "2889301810",
+  "versionMadeBy" => 20,
+  "localExtraField" => "",
+  "localHeaderRelativeOffset" => 0,
+  "possibleEocdOffset" => undef,
+  "desiredCompressionMethod" => 0,
+  "compressedSize" => 300,
+  "desiredCompressionLevel" => 0,
+  "dataOffset" => 0,
+  "fh" => $Archive::Zip::BufferedFileHandle,
+  "isSymbolicLink" => 0,
+  "cdExtraField" => ""
+}, 'Archive::Zip::ZipFileMember' );
+
+
+$LHMEMBER1 = bless( {
+  "externalFileName" => "(testin.zip)",
+  "uncompressedSize" => 300,
+  "fileName" => "testdir/testing.txt",
+  "versionNeededToExtract" => 20,
+  "fileAttributeFormat" => 3,
+  "diskNumberStart" => 0,
+  "compressionMethod" => 0,
+  "eocdCrc32" => "2889301810",
+  "fileComment" => "",
+  "externalFileAttributes" => "2176188416",
+  "internalFileAttributes" => 0,
+  "bitFlag" => 0,
+  "lastModFileDateTime" => "1111319403",
+  "crc32" => "2889301810",
+  "versionMadeBy" => 20,
+  "localExtraField" => "",
+  "localHeaderRelativeOffset" => 0,
+  "possibleEocdOffset" => undef,
+  "desiredCompressionMethod" => 0,
+  "compressedSize" => 300,
+  "desiredCompressionLevel" => 0,
+  "dataOffset" => 49,
+  "fh" => $Archive::Zip::BufferedFileHandle,
+  "isSymbolicLink" => 0,
+  "cdExtraField" => ""
+}, 'Archive::Zip::ZipFileMember' );
+
+End of member: 349, CD at 349
+
+ziptest output:
+ Length    Size         Last Modified         CRC-32  Name
+-------- --------  ------------------------  -------- ----
+     300      300  Tue Jan 29 12:27:22 2013  ac373f32 testdir/testing.txt
+All CRCs check OK

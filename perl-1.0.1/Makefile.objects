@@ -1,0 +1,8 @@
+php_perl.lo: /var/virtual/storyzer.com/testperl/perl-1.0.1/php_perl.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/var/virtual/storyzer.com/testperl/perl-1.0.1 $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /var/virtual/storyzer.com/testperl/perl-1.0.1/php_perl.c -o php_perl.lo 
+$(phplibdir)/perl.la: ./perl.la
+	$(LIBTOOL) --mode=install cp ./perl.la $(phplibdir)
+
+./perl.la: $(shared_objects_perl) $(PERL_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS) -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_perl) $(PERL_SHARED_LIBADD)
+
